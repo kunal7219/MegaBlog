@@ -11,7 +11,7 @@ export default function Post() {
   const navigate = useNavigate();
 
   const userData = useSelector((state) => state.auth.userData);
-
+  console.log(userData);
   const isAuthor = post && userData ? post.userId === userData.$id : false;
 
   useEffect(() => {
@@ -40,7 +40,7 @@ export default function Post() {
             <div className="text-center">
               <h1 className="text-3xl font-bold">{post.title}</h1>
             </div>
-            <div className="mt-3 p-4 text-justify">{parse(post.body)}</div>
+            <div className="mt-3 p-4 text-justify">{parse(post.content)}</div>
           </div>
           <div className=" h-fit basis-2/5">
             {isAuthor && (
